@@ -312,7 +312,6 @@ int acc_vreg = 0;
 #if 1
 	printk("SXF D2 msm_dss_disable_vreg \n ");
 
-		 dump_stack();
 	if ((panel_suspend_power_flag != 3) && acc_vreg) {
 		ret = msm_dss_enable_vreg(
 		ctrl_pdata->panel_power_data.vreg_config,
@@ -375,7 +374,6 @@ static int mdss_dsi_panel_power_on(struct mdss_panel_data *pdata)
 		return -EINVAL;
 	}
 	printk("SXF enter %s\n", __func__);
-	dump_stack();
 
 	ctrl_pdata = container_of(pdata, struct mdss_dsi_ctrl_pdata,
 				panel_data);

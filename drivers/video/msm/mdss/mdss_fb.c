@@ -3508,13 +3508,12 @@ int mdss_fb_atomic_commit(struct fb_info *info,
 	int ret = -EPERM;
 	u32 old_xres, old_yres, old_format;
 
-	printk("Enter %s\n", __func__);
+	pr_debug("Enter %s\n", __func__);
 	if (!mfd || (!mfd->op_enable)) {
 		pr_err("mfd is NULL or operation not permitted\n");
 		return -EPERM;
 	}
 
-	dump_stack();
 	if ((mdss_fb_is_power_off(mfd)) &&
 		!((mfd->dcm_state == DCM_ENTER) &&
 		(mfd->panel.type == MIPI_CMD_PANEL))) {
